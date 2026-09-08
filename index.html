@@ -1,90 +1,64 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>English Conditionals Game - Aprende los Condicionales</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Conditional Quest</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <div class="container">
-        <header>
-            <h1>🎮 English Conditionals Game</h1>
-            <p class="subtitle">Aprende los condicionales en inglés de forma divertida</p>
-        </header>
 
-        <!-- Menu Principal -->
-        <section id="mainMenu" class="menu-section active">
-            <div class="menu-card">
-                <h2>Selecciona el nivel:</h2>
-                <div class="button-group">
-                    <button class="btn btn-primary" onclick="selectLevel('firstConditional')">
-                        📌 First Conditional<br><small>Posible en el futuro</small>
-                    </button>
-                    <button class="btn btn-primary" onclick="selectLevel('secondConditional')">
-                        📌 Second Conditional<br><small>Imaginario presente/futuro</small>
-                    </button>
-                    <button class="btn btn-primary" onclick="selectLevel('thirdConditional')">
-                        📌 Third Conditional<br><small>Pasado contrafáctico</small>
-                    </button>
-                </div>
-            </div>
-        </section>
+    <h1>🎮 CONDITIONAL QUEST</h1>
 
-        <!-- Sección de Explicación -->
-        <section id="explanationSection" class="menu-section">
-            <div class="explanation-card">
-                <button class="btn-back" onclick="backToMenu()">← Atrás</button>
-                <h2 id="explanationTitle"></h2>
-                <div id="explanationContent" class="explanation-content"></div>
-                <button class="btn btn-success" onclick="startGame()">Comenzar Quiz →</button>
-            </div>
-        </section>
-
-        <!-- Sección de Quiz -->
-        <section id="quizSection" class="menu-section">
-            <div class="quiz-card">
-                <div class="progress-bar">
-                    <div id="progressFill" class="progress-fill"></div>
-                </div>
-                <p class="question-counter"><span id="currentQuestion">1</span> / <span id="totalQuestions">5</span></p>
-                
-                <h2 id="questionText"></h2>
-                
-                <div id="optionsContainer" class="options-container"></div>
-                
-                <div id="feedbackContainer" class="feedback-container hidden">
-                    <p id="feedbackText"></p>
-                </div>
-
-                <button id="nextButton" class="btn btn-primary hidden" onclick="nextQuestion()">
-                    Siguiente →
-                </button>
-
-                <button id="resultButton" class="btn btn-success hidden" onclick="showResults()">
-                    Ver Resultados →
-                </button>
-            </div>
-        </section>
-
-        <!-- Sección de Resultados -->
-        <section id="resultsSection" class="menu-section">
-            <div class="results-card">
-                <h2>🎉 ¡Juego Terminado!</h2>
-                <div class="score-display">
-                    <p class="score-text">Puntuación: <span id="finalScore">0</span> / <span id="maxScore">5</span></p>
-                    <div class="score-circle">
-                        <span id="scorePercentage">0%</span>
-                    </div>
-                </div>
-                <p id="resultMessage" class="result-message"></p>
-                <button class="btn btn-primary" onclick="backToMenu()">
-                    ← Volver al Menú
-                </button>
-            </div>
-        </section>
+    <div id="info">
+        ⭐ Score: <span id="score">0</span>
+        | ❤️ Lives: <span id="lives">3</span>
     </div>
 
-    <script src="game.js"></script>
+    <div id="game">
+
+        <div id="player"></div>
+
+        <div class="platform" id="p1"></div>
+        <div class="platform" id="p2"></div>
+        <div class="platform" id="p3"></div>
+        <div class="platform" id="p4"></div>
+
+        <div class="coin" id="coin1"></div>
+        <div class="coin" id="coin2"></div>
+        <div class="coin" id="coin3"></div>
+
+        <div id="finish">🏆</div>
+
+        <div id="questionBox">
+
+            <h2>🧠 Conditional Challenge</h2>
+
+            <div id="question"></div>
+
+            <button class="answer" id="a1"></button>
+            <button class="answer" id="a2"></button>
+            <button class="answer" id="a3"></button>
+
+            <div id="message"></div>
+
+        </div>
+
+    </div>
+
+    <div class="controls">
+        ⬅️ ➡️ Move &nbsp; | &nbsp; ⬆️ Jump
+    </div>
+
+    <br>
+
+    <button id="restart" onclick="restartGame()">
+        🔄 Restart Game
+    </button>
+
+    <script src="script.js"></script>
+
 </body>
 </html>
